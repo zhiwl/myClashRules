@@ -1,4 +1,4 @@
-# ´úÀíÁĞ±í
+# ä»£ç†åˆ—è¡¨
 
 # MyList && Other
 DOMAIN-SUFFIX,1password.com
@@ -18,7 +18,7 @@ DOMAIN-SUFFIX,unsplash.com
 DOMAIN-SUFFIX,xn--i2ru8q2qg.com
 DOMAIN-SUFFIX,yunpanjingling.com
 
-# ¹úÍâÓòÃû
+# å›½å¤–åŸŸå
 DOMAIN-SUFFIX,eu
 DOMAIN-SUFFIX,hk
 DOMAIN-SUFFIX,jp
@@ -28,7 +28,7 @@ DOMAIN-SUFFIX,tw
 DOMAIN-SUFFIX,uk
 DOMAIN-SUFFIX,us
 
-# ¹úÍâÓòÃû¹Ø¼ü×Ö
+# å›½å¤–åŸŸåå…³é”®å­—
 DOMAIN-KEYWORD,1e100
 DOMAIN-KEYWORD,abema
 DOMAIN-KEYWORD,appledaily
@@ -38,7 +38,6 @@ DOMAIN-KEYWORD,blogspot
 DOMAIN-KEYWORD,dropbox
 DOMAIN-KEYWORD,facebook
 DOMAIN-KEYWORD,fbcdn
-DOMAIN-KEYWORD,github
 DOMAIN-KEYWORD,gmail
 DOMAIN-KEYWORD,google
 DOMAIN-KEYWORD,instagram
@@ -186,7 +185,7 @@ DOMAIN-KEYWORD,uk-live
 DOMAIN-SUFFIX,bbc.co
 DOMAIN-SUFFIX,bbc.com
 
-# Developer ¿ª·¢Õß³£ÓÃ¹úÍâÍøÕ¾¡¢¾µÏñºÍÂÛÌ³
+# Developer å¼€å‘è€…å¸¸ç”¨å›½å¤–ç½‘ç«™ã€é•œåƒå’Œè®ºå›
 DOMAIN-SUFFIX,apache.org
 DOMAIN-SUFFIX,docker.com
 DOMAIN-SUFFIX,elastic.co
@@ -237,7 +236,7 @@ IP-CIDR,185.60.216.0/22,no-resolve
 IP-CIDR,204.15.20.0/22,no-resolve
 
 # Github
-DOMAIN-SUFFIX,github.com
+DOMAIN,codeload.github.com
 DOMAIN-SUFFIX,github.io
 DOMAIN-SUFFIX,githubapp.com
 DOMAIN-SUFFIX,githubassets.com
@@ -396,7 +395,7 @@ IP-CIDR,158.85.224.160/27,no-resolve
 IP-CIDR,75.126.150.0/16,no-resolve
 IP-CIDR,69.171.235.0/16,no-resolve
 
-# Wikipedia Î¬»ùÏà¹ØÓòÃû
+# Wikipedia ç»´åŸºç›¸å…³åŸŸå
 DOMAIN-SUFFIX,mediawiki.org
 DOMAIN-SUFFIX,wikibooks.org
 DOMAIN-SUFFIX,wikidata.org
@@ -410,10 +409,10 @@ DOMAIN-SUFFIX,wikiversity.org
 DOMAIN-SUFFIX,wikivoyage.org
 DOMAIN-SUFFIX,wiktionary.org
 
-#·ÉÁ÷Ö±²¥
+#é£æµç›´æ’­
 DOMAIN-SUFFIX,neulion.com
 DOMAIN-SUFFIX,icntv.xyz
 DOMAIN-SUFFIX,flzbcdn.xyz
 
-#»ªÎÄµçÊÓ
+#åæ–‡ç”µè§†
 DOMAIN-SUFFIX,ocnttv.com

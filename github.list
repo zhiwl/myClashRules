@@ -1,4 +1,4 @@
-# 自定义直连列表 暂未使用
+# Github
 
 #规则解释：
 #DOMAIN-SUFFIX:域名后缀匹配
@@ -11,4 +11,10 @@
 #SRC-PORT:源端口匹配
 #MATCH: 全匹配(一 般放在最后)
 
+DOMAIN-KEYWORD,github
 DOMAIN-SUFFIX,github.com
+DOMAIN-SUFFIX,github.io
+DOMAIN-SUFFIX,githubapp.com
+DOMAIN-SUFFIX,githubassets.com
+DOMAIN-SUFFIX,githubusercontent.com
+

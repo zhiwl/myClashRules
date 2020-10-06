@@ -10,3 +10,4 @@
 #SRC-PORT:源端口匹配
 #MATCH: 全匹配(一 般放在最后)
 
+DOMAIN-KEYWORD,lanfan

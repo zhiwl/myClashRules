@@ -10,15 +10,10 @@
 #SRC-PORT:源端口匹配
 #MATCH: 全匹配(一 般放在最后)
 
-DOMAIN-SUFFIX,limbopro.xyz
-DOMAIN-SUFFIX,v2rayssr.com
-DOMAIN-SUFFIX,merlinblog.xyz
-DOMAIN-SUFFIX,daliansky.net
 DOMAIN-SUFFIX,cn2qq.com
 DOMAIN-SUFFIX,ssr.gr
 DOMAIN-SUFFIX,sspro.nl
 DOMAIN-SUFFIX,ssrla.de
-DOMAIN-SUFFIX,everhelper.me
 DOMAIN-SUFFIX,greasyfork.org
-DOMAIN-SUFFIX,dynamicwallpaper.club
-DOMAIN-SUFFIX,kapeli.com
+DOMAIN,translate.google.com
+DOMAIN,translate.googleapis.com

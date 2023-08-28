@@ -10,10 +10,6 @@
 #SRC-PORT:源端口匹配
 #MATCH: 全匹配(一 般放在最后)
 
-DOMAIN-SUFFIX,cn2qq.com
-DOMAIN-SUFFIX,ssr.gr
-DOMAIN-SUFFIX,sspro.nl
-DOMAIN-SUFFIX,ssrla.de
 DOMAIN-SUFFIX,greasyfork.org
 DOMAIN,translate.google.com
 DOMAIN,translate.googleapis.com

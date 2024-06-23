@@ -10,6 +10,7 @@
 #SRC-PORT:源端口匹配
 #MATCH: 全匹配(一 般放在最后)
 
+DOMAIN-SUFFIX,x.com
 DOMAIN-SUFFIX,greasyfork.org
 DOMAIN,translate.google.com
 DOMAIN,translate.googleapis.com

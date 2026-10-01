@@ -1,0 +1,173 @@
+# ============================================================
+# Clash Verge Rev Merge（全局扩展配置）
+# Loyalsoldier 规则集 + GeoSite 内置分类 + 自定义规则文件 + 精简国家分组
+# 国家分组：香港 / 台湾 / 美国 / 日本 / 狮城 / 韩国
+# ============================================================
+
+profile:
+  store-selected: true
+
+# ==================== 规则集 ====================
+rule-providers:
+  myDirect:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/zhiwl/myClashRules/master/myDirect.txt"
+    path: ./ruleset/myDirect.yaml
+    interval: 86400
+    # 走代理
+    proxy: "🚀 节点选择"
+  myProxy:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/zhiwl/myClashRules/master/myProxy.txt"
+    path: ./ruleset/myProxy.yaml
+    interval: 86400
+    proxy: "🚀 节点选择"
+  applications:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
+    path: ./ruleset/applications.yaml
+    interval: 86400
+  reject:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
+    path: ./ruleset/reject.yaml
+    interval: 86400
+  proxy:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt"
+    path: ./ruleset/proxy.yaml
+    interval: 86400
+  direct:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt"
+    path: ./ruleset/direct.yaml
+    interval: 86400
+  lancidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt"
+    path: ./ruleset/lancidr.yaml
+    interval: 86400
+
+# ==================== 策略组 ====================
+proxy-groups:
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇺🇸 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 狮城节点
+      - 🇰🇷 韩国节点
+      - 🚀 指定节点
+
+  - name: 🚀 指定节点
+    type: select
+    include-all: true
+
+  - name: 🇭🇰 香港节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    lazy: true
+    include-all: true
+    filter: "(?i)港|HK|hk|Hong Kong|HongKong|hongkong"
+
+  - name: 🇨🇳 台湾节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    lazy: true
+    include-all: true
+    filter: "(?i)台|新北|彰化|TW|Taiwan"
+
+  - name: 🇺🇸 美国节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    lazy: true
+    include-all: true
+    filter: "(?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States"
+
+  - name: 🇯🇵 日本节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    lazy: true
+    include-all: true
+    filter: "(?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan"
+
+  - name: 🇸🇬 狮城节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    lazy: true
+    include-all: true
+    filter: "(?i)新加坡|坡|狮城|SG|Singapore"
+
+  - name: 🇰🇷 韩国节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    lazy: true
+    include-all: true
+    filter: "(?i)KR|Korea|KOR|首尔|韩|韓"
+
+  - name: 💬 Ai平台
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🇺🇸 美国节点
+      - DIRECT
+
+# ==================== 规则 ====================
+rules:
+  # ── 第0层：强制直连（自定义文件 myDirect.txt）──
+  - RULE-SET,myDirect,DIRECT
+  # ── 第1层：面板自身 ──
+  - DOMAIN,clash.razord.top,DIRECT
+  - DOMAIN,yacd.haishan.me,DIRECT
+  # ── 第2层：自定义代理覆盖（自定义文件 myProxy.txt，当前为空）──
+  - RULE-SET,myProxy,🚀 节点选择
+  # ── 第3层：Loyalsoldier 下载型规则集 ──
+  - RULE-SET,applications,DIRECT
+  - RULE-SET,reject,REJECT
+  - RULE-SET,proxy,🚀 节点选择
+  - RULE-SET,direct,DIRECT
+  # ── 第4层：私有 IP 段 ──
+  - RULE-SET,lancidr,DIRECT
+  # ── 第5层：GeoSite 内置分类（零下载，数据来自 geosite.dat）──
+  - GEOSITE,apple,DIRECT
+  - GEOSITE,google,🚀 节点选择
+  - GEOSITE,microsoft,🚀 节点选择
+  - GEOSITE,telegram,🚀 节点选择
+  - GEOSITE,private,DIRECT
+  - GEOSITE,category-ads-all,REJECT
+  - GEOSITE,category-ai-!cn,💬 Ai平台
+  - GEOSITE,geolocation-cn,DIRECT
+  - GEOSITE,geolocation-!cn,🚀 节点选择
+  # ── 第6层：IP 兜底 ──
+  - GEOIP,LAN,DIRECT
+  - GEOIP,telegram,🚀 节点选择
+  - GEOIP,CN,DIRECT,no-resolve
+  # ── 第7层：最终兜底 ──
+  - MATCH,🐟 漏网之鱼
